@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Slab" />
+    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.1.4/uploadcare.full.min.js"></script>
+  </head>
+  <body>
+    <header class="wrapper">
+      <div class="overlay-back">
+      <div class="overlay">
+      <div class="clip-text clip-text_one clip-text--no-textzone">Cecilia Marie
+        <div><p class="clip-text2 clip-text_one clip-text--no-textzone"></p></div>
+      </div>
+      <div>
+
+      <div>
+        <i class="fa fa-1x fa-github-alt" aria-hidden="true"></i>
+        <i class="fa fa-1x fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-1x fa-linkedin" aria-hidden="true"></i>
+        <i class="fa fa-1x fa-envelope" aria-hidden="true"></i>
+      </div>
+     </div>
+    </div>
+      <nav>
+        <div class="myself"></div>
+        <ul>
+          <li><a href="#" class="navAbout">About</a><li>
+          <li><a href="#" class="navBlog">Blog</a><li>
+          <li><a href="#">Resume</a><li>
+          <li><a href="#" class="navProjects">Projects</a><li>
+          <li><a href="#" class="navContact">Contact</a><li>
+       </ul>
+     </nav>
+   </header>
+     <div class="parallax">
+       <h5 class="about">About</h5>
+       <div class='container'>
+          <div id="picture" class="animatable"></div>
+         <span class="aboutme intro">Let me introduce <b class="me">myself</b>.<span> </br>
+         <div class="aboutme">
+           I'm a fullstack developer with a softspot for the frontend. My passion lies with mostly working with frontend <b class="frameworks">frameworks</b>. Although I'm a programmer by <b class="heart"><span class="emo">heart</span><span id="heart">💞</span></b>, I do have acouple other hobbies I can show you.
+         </div>
+      </div>
+     </div>
+     <div class="parallax3">
+       <div class="about-projects">
+         <h3 class="projects">Projects</h3>
+         Here are a few of my fabulous projects I've been working on! Feel free to click on them, and check them out if you want!
+       </div>
+        <div class="top-container">
+          <div class="urban-ball">
+             <h1 class="urban"><a href="https://urbantrails.io/">https://urbantrails.io</a></h1>
+          </div>
+          <div class="amanda-ball">
+             <h1 class="amanda"><a href'#'>http://amandapascali.com</a></h1>
+          </div>
+        </div>
+     </div>
+    <div class="parallax-two">
+      <div class="unblurred">
+        <div  class="contacts">
+        <h3 class="contact">Contact Me</h3>
+        <div class="closing">
+        I love to contribute to opensource progects and to explore newer forms of tech. Hit me up on through any of these links if you're looking for someone to collaborate with!
+        </div>
+        <div>
+          <i class="fa fa-2x fa-github-alt" aria-hidden="true"></i>
+          <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      Made With ❤️ by Cecilia Marie 👩🏻‍💻
+    </div>
+    </div>
+
+    <script>
+$(document).ready(function() {
+  // nav
+  // $(window).scrollTo(0, $( window ).height() )
+  $('.navAbout').click(() => {
+    window.scroll({
+     top: $( window ).height() - 100,
+     left: 0,
+     behavior: 'smooth'
+    });
+  })
+  // $('.navProjects').click($(window).scrollTo(0,  $( window ).height() * 2))
+  $('.navProjects').click(() => {
+    window.scroll({
+     top: $( window ).height() * 2 + 130,
+     left: 0,
+     behavior: 'smooth'
+    });
+  })
+  // $('.navContact').click($(window).scrollTo(0, $( window ).height() * 4 ))
+  $('.navContact').click(() => {
+    window.scroll({
+     top: $( window ).height() * 3 + 330,
+     left: 0,
+     behavior: 'smooth'
+    });
+  })
+
+  var me = $('.myself')
+  var parallax1 = $('.parallax')
+  var parallax3 = $('.parallax3')
+  var myself = $('.myself')[0]
+  var body = $('header');
+  body.css({'height': `${$( window ).height() - 200}px`})
+  body.css({'background-color': `rgb(0, 0, 0)`});
+  body.css({'height': `${$(window).height()}px`})
+  var hi = $('#picture').addClass('animatable')
+  var picture1 = $('.amanda').addClass('animatable')
+  var picture2 = $('.urban').addClass('animatable')
+  $(window).on('scroll', function (e) {
+    parallax1.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
+    parallax3.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
+
+    console.log($(window).scrollTop())
+
+    if ($(window).scrollTop() > 600) {
+      me.css({'display': 'inline-block'})
+    }
+
+    if ($(window).scrollTop() > 1220 && $(window).scrollTop() < 1291) {
+      picture1.removeClass('animatable').addClass('animated')
+      picture1.css({'animation': 'bounceInRight 1.5s linear'})
+    }
+
+      if ($(window).scrollTop() > 1220 && $(window).scrollTop() < 1291) {
+      picture2.removeClass('animatable').addClass('animated')
+      picture2.css({'animation': 'bounceInLeft 0.9s linear'})
+    }
+
+    var navHeight = $( window ).height();
+    if ($(window).scrollTop() > navHeight - 100) {
+      $('nav').addClass('fixed');
+    } else {
+      $('nav').removeClass('fixed');
+    }
+
+    if ($(window).scrollTop() > navHeight - 10) {
+      $('nav').addClass('shadow');
+    } else {
+      $('nav').removeClass('shadow');
+    }
+
+    var num = $(this).scrollTop()
+    $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
+    body.css({'background-color': `rgb(${num}, ${num}, ${num})`});
+  });
+
+});
+</script>
+</body>
+</html>
