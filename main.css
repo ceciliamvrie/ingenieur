@@ -36,6 +36,9 @@ body {
 
 .overlay-back {
     background-image: url('http://unsplash.it/1200x800');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .overlay {
@@ -80,7 +83,7 @@ h1.urban > a, h1.amanda > a {
 }
 
 h1.amanda > a {
-  padding: 52% 37%;
+  padding: 49% 32%;
 }
 
 h1.urban > a:hover, h1.amanda > a:hover {
