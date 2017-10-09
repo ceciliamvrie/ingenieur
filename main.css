@@ -459,8 +459,12 @@ nav li a:hover {
   margin: 30px 14px;
 }
 
+a {
+  color: #eee;
+}
+
 .fa-twitter {
-  padding: 10px 13px;
+  padding: 11px 13px;
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
@@ -475,7 +479,7 @@ nav li a:hover {
 }
 
 .fa-linkedin {
-    padding:10px 14px;
+    padding:11px 14px;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
@@ -488,8 +492,8 @@ nav li a:hover {
     background-color: rgba(0, 115, 164, 0.73);
 }
 
-.fa-envelope {
-    padding:10px 11px;
+.fa-medium {
+    padding:11px 12px;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
@@ -498,12 +502,12 @@ nav li a:hover {
     background-color: rgba(50, 47, 48, 0.44);
     border-radius: 50%;
 }
-.fa-envelope:hover {
+.fa-medium:hover {
     background-color: rgba(226, 87, 20, 0.78);
 }
 
 .fa-github-alt {
-    padding:10px 12px;
+    padding:11px 13px;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
