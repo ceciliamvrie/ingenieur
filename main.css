@@ -65,6 +65,99 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.trans-circle {
+  background-image: url('http://unsplash.it/1200x700');
+  background-attachment: fixed;
+  width: 600px;
+  height: 430px;
+  background-repeat: no-repeat;
+  z-index: -1000;
+  margin-left: -20%;
+  margin-top: 10%;
+  display: inline-flex;
+}
+
+
+#trans-circle {
+  background-image: url('http://unsplash.it/1200x700');
+  background-attachment: fixed;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  z-index: -1000;
+  display: inline-flex;
+}
+
+.trans-sm-circle {
+  background-image: url('http://unsplash.it/700x700');
+  background-attachment: fixed;
+  width: 25px;
+  height: 25px;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-flex;
+  float: right;
+}
+
+.trans-sm-circle1 {
+  background-image: url('http://unsplash.it/700x700');
+  background-attachment: fixed;
+  width: 50px;
+  height: 50px;
+  top: 17%;
+  left: 14%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-flex;
+  float: right;
+}
+
+.trans-sm-circle2 {
+  background-image: url('http://unsplash.it/700x700');
+  background-attachment: fixed;
+  width: 10px;
+  height: 10px;
+  top: 20%;
+  left: 12%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-flex;
+  float: right;
+}
+
+.trans-sm-circle3 {
+  background-image: url('http://unsplash.it/700x700');
+  background-attachment: fixed;
+  width: 20px;
+  height: 20px;
+  top: 40%;
+  left: 17%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-flex;
+  float: right;
+}
+
+.trans-sm-circle4 {
+  background-image: url('http://unsplash.it/700x700');
+  background-attachment: fixed;
+  width: 42px;
+  height: 42px;
+  top: 29%;
+  left: 10%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-flex;
+  float: right;
+}
+
 /*.urban-ball, .amanda-ball {
   height: 300px;
   width: 300px;
@@ -363,8 +456,7 @@ nav li a:hover {
 }
 
 .about {
-  font-size: 30px;
-  color: #F794BB;
+  font-size: 20px;
   margin-top: 1em;
   margin-bottom: 0.7em;
   text-transform: uppercase;
@@ -376,21 +468,34 @@ nav li a:hover {
   letter-spacing: 1.5px;
   color: #F794BB;
   margin-top: 1.3em;
-  max-width: 800px;
+  max-width: 300px;
   margin: auto;
   display: inline-block;
   font-weight: normal;
-  font-size: 26px;
-  line-height: 40px;
-  text-align: center;
+  font-size: 14px;
+  line-height: 27px;
+  text-align: left;
 }
 
 .intro {
-  font-weight: 400;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 40px;
+  margin-bottom: 7px;
+  float: left;
 }
 
 .container{
-  text-align: center;
+  text-align: left;
+  position: absolute;
+  background-color: #fff;
+  max-height: 500px;
+  max-width: 700px;
+  padding: 7% 7%;
+  top: 135%;
+  left: 40%;
+  right: 15%;
+  display: inline-flex;
 }
 
 
@@ -429,7 +534,7 @@ nav li a:hover {
   height: 500px;
   padding: 8% 5%;
   width: 500px;
-  background-color: hsl(213, 100%, 50%);
+  background-color: #fff;
   border-radius: 50%;
 }
 
