@@ -44,8 +44,8 @@ body {
 .overlay {
   background: rgba(14, 193, 254, 0.6);
   border: 0.5px dotted rgb(14, 193, 254);
-  width: 600px;
-  height: 600px;
+  width: 62%;
+  height: 90%;
   border-radius: 50%;
   margin: auto;
   z-index: -1;
@@ -175,7 +175,7 @@ h1.urban > a, h1.amanda > a {
   opacity: 0.2;
   padding: 40% 35%;
   font-size: 14px;
-  top: -25em;
+  top: -30em;
   position:relative;
   border-radius: 50%;
   color: white;
@@ -184,7 +184,7 @@ h1.urban > a, h1.amanda > a {
 
 h1.amanda > a {
   padding: 35% 30%;
-  top: -32em;
+  top: -37em;
   right: 16em;
 }
 
@@ -436,7 +436,7 @@ nav {
   bottom: 0px;
 	position: absolute;
 	width: 100%;
-	height: 100px;
+	height: 10%;
 	background: #000;
 }
 
@@ -537,9 +537,9 @@ nav li a:hover {
   font-weight: 200;
   line-height: 40px;
   text-align: center;
-  height: 500px;
-  padding: 8% 5%;
-  width: 500px;
+  height: 40%;
+  padding: 10% 1%;
+  width: 40%;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -761,7 +761,6 @@ a {
     padding: 0;
 		opacity: 0;
 	}
-
 	100% {
     padding: 40%, 35%;
 		opacity: 1;
