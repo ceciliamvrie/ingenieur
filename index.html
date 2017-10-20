@@ -46,7 +46,7 @@
           <div id="picture" class="animatable"></div>
          <h1 class="aboutme intro">Let me introduce <b class="me">myself</b>.</h1> </br>
          <div class="aboutme">
-           My name's Cecilia and I'm a developer with a soft-spot for Javascript and the frontend. I enjoy my time writing blogs, programs, and songs - while occasionally checking out awesome projects in Github and Codepen.
+           My name's Cecilia and I'm a developer with a soft-spot for Javascript and the frontend. I engoy my time writing blogs, programs, and songs - while occasionally checking out awesome projects in Github and Codepen.
        </div>
       </div>
      </div>
@@ -57,10 +57,10 @@
        </div>
         <div class="top-container">
           <div class="urban-ball">
-             <h1 class="urban"><a href="https://urbantrails.io/">https://urbantrails.io</a></h1>
+             <h1 class="urban layer" data-depth="0.8"><a href="https://urbantrails.io/">https://urbantrails.io</a></h1>
           </div>
           <div class="amanda-ball">
-             <h1 class="amanda"><a href='http://amandapascali.com'>http://amandapascali.com</a></h1>
+             <h1 class="amanda layer" data-depth="0.8"><a href='http://amandapascali.com'>http://amandapascali.com</a></h1>
           </div>
         </div>
      </div>
@@ -123,24 +123,40 @@ $(document).ready(function() {
   var hi = $('#picture').addClass('animatable')
   var picture1 = $('.amanda').addClass('animatable')
   var picture2 = $('.urban').addClass('animatable')
+
+
   $(window).on('scroll', function (e) {
     parallax1.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
     parallax3.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
 
-    console.log($(window).scrollTop())
+    const topDistance = window.pageYOffset
+    const layers = document.querySelectorAll('.layer')
+
+    if (topDistance > 1000) {
+      for (var layer of layers) {
+        var depth = layer.getAttribute('data-depth')
+        var movement = -(topDistance * depth)
+        var translate3d = 'translate3d(0, ' + movement + 'px, 0)'
+        layer.style['-webkit-transform'] = translate3d
+        layer.style['-moz-transform'] = translate3d
+        layer.style['-ms-transform'] = translate3d
+        layer.style['-o-transform'] = translate3d
+        layer.style.transform = translate3d
+      }
+    }
 
     if ($(window).scrollTop() > 600) {
       me.css({'display': 'inline-block'})
     }
 
-    if ($(window).scrollTop() > 1220 && $(window).scrollTop() < 1291) {
+    if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
       picture1.removeClass('animatable').addClass('animated')
-      picture1.css({'animation': 'bounceInRight 1.5s linear'})
+      picture1.css({'animation': 'bounceInRight 0.2s linear'})
     }
 
-      if ($(window).scrollTop() > 1220 && $(window).scrollTop() < 1291) {
+      if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
       picture2.removeClass('animatable').addClass('animated')
-      picture2.css({'animation': 'bounceInLeft 0.9s linear'})
+      picture2.css({'animation': 'bounceInRight 1.5s linear'})
     }
 
     var navHeight = $( window ).height();
