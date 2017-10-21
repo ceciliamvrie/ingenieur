@@ -173,19 +173,23 @@ body {
 h1.urban > a, h1.amanda > a {
   background: black;
   opacity: 0.2;
-  padding: 40% 35%;
+  padding: 28% 25%;
   font-size: 14px;
   top: -30em;
-  position:relative;
+  position: relative;
   border-radius: 50%;
   color: white;
   border: solid 1px white;
 }
 
+.amandas {
+  opacity: 0;
+  background-color: transparent;
+}
+
 h1.amanda > a {
-  padding: 35% 30%;
-  top: -37em;
-  right: 16em;
+  top: -34em;
+  right: 15em;
 }
 
 h1.urban > a:hover, h1.amanda > a:hover {

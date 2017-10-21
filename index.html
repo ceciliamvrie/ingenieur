@@ -60,7 +60,7 @@
              <h1 class="urban layer" data-depth="0.8"><a href="https://urbantrails.io/">https://urbantrails.io</a></h1>
           </div>
           <div class="amanda-ball">
-             <h1 class="amanda layer" data-depth="0.8"><a href='http://amandapascali.com'>http://amandapascali.com</a></h1>
+             <h1 class="amanda layer" data-depth="0.8"><a class="amandas" href='http://amandapascali.com'>http://amandapascali.com</a></h1>
           </div>
         </div>
      </div>
@@ -135,7 +135,12 @@ $(document).ready(function() {
     const topDistance = window.pageYOffset
     const layers = document.querySelectorAll('.layer')
 
+    if (topDistance < 1000) {
+      $('.amandas').css({'opacity': '0'})
+    }
+
     if (topDistance > 1000) {
+      $('.amandas').css({'opacity': '0.2'})
       for (var layer of layers) {
         var depth = layer.getAttribute('data-depth')
         var movement = -(topDistance * depth)
@@ -147,6 +152,7 @@ $(document).ready(function() {
         layer.style.transform = translate3d
       }
     }
+
 
     if ($(window).scrollTop() > 600) {
       me.css({'display': 'inline-block'})
