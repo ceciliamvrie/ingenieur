@@ -44,7 +44,7 @@ body {
 .overlay {
   background: rgba(14, 193, 254, 0.6);
   border: 0.5px dotted rgb(14, 193, 254);
-  width: 62%;
+  width: 52%;
   height: 90%;
   border-radius: 50%;
   margin: auto;
@@ -875,4 +875,20 @@ a {
 		opacity: 1;
 		transform: scale(1);
 	}
+}
+
+@media (min-width: 2000px){
+  .clip-text {
+    font-size: 12em;
+  }
+  p {
+    font-size: 50px;
+  }
+  .fa {
+    font-size: 2em;
+  }
+  nav li {
+    padding: 15px 40px;
+    font-size: 30px;
+  }
 }
