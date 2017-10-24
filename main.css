@@ -158,14 +158,6 @@ body {
   float: right;
 }
 
-/*.urban-ball, .amanda-ball {
-  height: 300px;
-  width: 300px;
-  background: black;
-  opacity: 0.2;
-  padding: 5%;
-}*/
-
 .layer {
   position: fixed;
 }
@@ -175,7 +167,7 @@ h1.urban > a, h1.amanda > a {
   opacity: 0.2;
   padding: 28% 25%;
   font-size: 14px;
-  top: -30em;
+  top: -27em;
   position: relative;
   border-radius: 50%;
   color: white;
@@ -187,6 +179,7 @@ h1.urban > a, h1.amanda > a {
   background-color: transparent;
 }
 
+
 h1.amanda > a {
   top: -34em;
   right: 15em;
@@ -194,8 +187,13 @@ h1.amanda > a {
 
 h1.urban > a:hover, h1.amanda > a:hover {
   transition-duration: 1s, 1.3s;
-  opacity: 0.3;
   color: white;
+  background-color: blue;
+}
+
+h1.amanda > a:hover {
+  opacity: 0.4;
+  background-color: blue;
 }
 
 h1.urban, h1.amanda {
@@ -208,27 +206,6 @@ h1.urban:hover, h1.amanda:hover {
   transition-duration: 1s;
 }
 
-h1.urban ~ iframe {
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-}
-
-h1.amanda ~ iframe {
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-}
-
-h1.urban:hover~ iframe {
-  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-duration: 1s;
-    width: 100%;
-}
-
-h1.amanda:hover ~ iframe {
-  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-duration: 1s;
-    width: 100%;
-}
 
 @keyframes ani {
   from {height: 0%; width: 0%;}
