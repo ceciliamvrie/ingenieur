@@ -25,7 +25,6 @@
      </div>
     </div>
       <nav>
-        <div class="myself"></div>
         <ul>
           <li><a href="#" class="navAbout">About</a><li>
           <li><a href="https://medium.com/@ceciliamvrie" class="navBlog">Blog</a><li>
@@ -44,8 +43,9 @@
          <div class="trans-sm-circle4"></div>
          <div class="trans-sm-circle3"></div>
           <div id="picture" class="animatable"></div>
-         <h1 class="aboutme intro">Let me introduce <b class="me">myself</b>.</h1> </br>
+         <h1 class="aboutme intro">Let me introduce myself.</h1> </br>
          <div class="aboutme">
+             <div class="myself"></div>
            My name's Cecilia and I'm a developer with a soft-spot for Javascript and the frontend. I engoy my time writing blogs, programs, and songs - while occasionally checking out awesome projects in Github and Codepen.
        </div>
       </div>
@@ -69,18 +69,21 @@
         <div  class="contacts">
         <h3 class="contact">Contact Me</h3>
         <div class="closing">
-          Want to explore more of my work? Feel free to click on any of these links below. If you want to contact me directly, my email is: <b style="margin-top: 30px;">ceciliamvrie@gmail.com</b>
-        </div>
-        <div>
-          <a href="https://github.com/ceciliamvrie"><i class="fa fa-2x fa-github-alt" aria-hidden="true"></i></a>
-          <a href="https://medium.com/@ceciliamvrie"><i class="fa fa-2x fa-medium" aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/in/cecilia-cisneros-504558141/"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a>
-          <a href="https://twitter.com/?lang=en"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+          Want to explore more of my work? Feel free to click on any of these links below. If you want to contact me directly, my email is: <span class="closeingspan"><b style="margin-top: 50px;">ceciliamvrie@gmail.com</b><span>
         </div>
       </div>
     </div>
+    <!-- <div class="parallax-3">
+      <div class="myself"></div>
+    </div> -->
     <div class="footer">
-      Made With ❤️ by Cecilia Marie 👩🏻‍💻
+      <div>
+        <a href="https://github.com/ceciliamvrie"><i class="fa fa-1x fa-github-alt" aria-hidden="true"></i></a> •
+        <a href="https://medium.com/@ceciliamvrie"><i class="fa fa-1x fa-medium" aria-hidden="true"></i></a> •
+        <a href="https://www.linkedin.com/in/cecilia-cisneros-504558141/"><i class="fa fa-1x fa-linkedin" aria-hidden="true"></i></a> •
+        <a href="https://twitter.com/?lang=en"><i class="fa fa-1x fa-twitter" aria-hidden="true"></i></a>
+      </div>
+      <span class="copyright">Made With ❤️ by Cecilia Marie 👩🏻‍💻</span>
     </div>
     </div>
 
@@ -115,7 +118,6 @@ $(document).ready(function() {
   $('.wrapper').css({'height': $(window).height +'px'})
   $('.parallax').css({'height': $(window).height +'px'})
   $('.parallax3').css({'height': $(window).height +'px'})
-  var me = $('.myself')
   var parallax1 = $('.parallax')
   var parallax3 = $('.parallax3')
   var myself = $('.myself')[0]
@@ -153,10 +155,6 @@ $(document).ready(function() {
       }
     }
 
-
-    if ($(window).scrollTop() > 600) {
-      me.css({'display': 'inline-block'})
-    }
 
     if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
       picture1.removeClass('animatable').addClass('animated')

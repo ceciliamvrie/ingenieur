@@ -35,14 +35,14 @@ body {
 }
 
 .overlay-back {
-    background-image: url('http://unsplash.it/1200x800');
+    background-image: url('./static/plant.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .overlay {
-  background: rgba(14, 193, 254, 0.6);
+  background: rgba(14, 193, 254, 0.7);
   border: 0.5px dotted rgb(14, 193, 254);
   width: 52%;
   height: 90%;
@@ -66,8 +66,10 @@ body {
 }
 
 .trans-circle {
-  background-image: url('http://unsplash.it/1200x700');
+  background-image: url('./static/girlworking.jpg');
   background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   width: 600px;
   height: 430px;
   background-repeat: no-repeat;
@@ -79,8 +81,9 @@ body {
 
 
 #trans-circle {
-  background-image: url('http://unsplash.it/1200x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
+  background-size: contain;
   width: 100px;
   height: 100px;
   background-repeat: no-repeat;
@@ -89,10 +92,11 @@ body {
 }
 
 .trans-sm-circle {
-  background-image: url('http://unsplash.it/700x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
   width: 25px;
   height: 25px;
+  background-size: contain;
   top: 10%;
   left: 10%;
   border-radius: 50%;
@@ -103,12 +107,13 @@ body {
 }
 
 .trans-sm-circle1 {
-  background-image: url('http://unsplash.it/700x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
   width: 50px;
   height: 50px;
   top: 17%;
   left: 14%;
+  background-size: contain;
   border-radius: 50%;
   background-repeat: no-repeat;
   position: absolute;
@@ -117,11 +122,12 @@ body {
 }
 
 .trans-sm-circle2 {
-  background-image: url('http://unsplash.it/700x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
   width: 10px;
   height: 10px;
   top: 20%;
+  background-size: contain;
   left: 12%;
   border-radius: 50%;
   background-repeat: no-repeat;
@@ -131,13 +137,14 @@ body {
 }
 
 .trans-sm-circle3 {
-  background-image: url('http://unsplash.it/700x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
   width: 20px;
   height: 20px;
   top: 40%;
   left: 17%;
   border-radius: 50%;
+  background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   display: inline-flex;
@@ -145,10 +152,11 @@ body {
 }
 
 .trans-sm-circle4 {
-  background-image: url('http://unsplash.it/700x700');
+  background-image: url('http://unsplash.it/1200x800');
   background-attachment: fixed;
   width: 42px;
   height: 42px;
+  background-size: contain;
   top: 29%;
   left: 10%;
   border-radius: 50%;
@@ -373,8 +381,8 @@ p::after {
 }
 
 .parallax-two {
-   padding-top: 19%;
-   background-image: url('http://unsplash.it/1200x800');
+   padding-top: 11%;
+   background-image: url('./static/plant.jpg');
    min-height: 703px;
    background-attachment: fixed;
    background-position: center;
@@ -490,19 +498,24 @@ nav li a:hover {
   text-align: center;
   clear: both;
   font: 10pt verdana;
-  line-height: 2em;
-  padding: 20px 0 20px 0;
+  line-height: 0.5em;
   height: 70px;
   width: 100%;
+  padding-bottom: 5%;
   background-color: black;
-  margin-top: 10%;
+  margin-top: 1%;
+}
+
+.copyright {
+  padding-top: -1%;
+  padding-bottom: 1%;
 }
 
 .projects {
   color: rgb(231, 136, 174);
   font-size: 19px;
   color: #F794BB;
-  margin-top: 0.em;
+  margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 1.3em;
@@ -540,11 +553,16 @@ nav li a:hover {
 
 .contacts {
   width: 600px;
-  height: 600px;
+  height: 550px;
   margin:auto;
-  background-color: rgba(255, 90, 176, 0.2);
+  margin-bottom: 10%;
+  background-color: rgba(242,148,180, 0.6);
   border-radius: 0.5px solid rgba(255, 90, 176, 0.8);
-  border-radius: 50%;
+}
+
+.closingspan {
+  margin-top: 50px;
+  padding: 3% 0%;
 }
 
 .fa {
@@ -632,11 +650,11 @@ a {
   max-width: 300px;
   height: 300px;
   padding: 9% 5% 13% 5%;
-  font-size: 20px;
+  font-weight: 200;
+  font-size: 18px;
   line-height: 32px;
   font-weight: 500;
   background-color: rgba(189, 242, 156, 0.6);
-  border-radius: 50%;
 }
 
 .animatable {
@@ -652,57 +670,16 @@ a {
 }
 
 .myself {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    bottom: 10px;
     background-image: url('https://ucarecdn.com/aa7fbbc9-19e2-41de-adbf-45198873789e/me.jpg');
     background-repeat: no-repeat;
     margin: auto;
-    display: none;
+    position: absolute;
+    top:74%;
+    right: 2%;
     background-size: cover;
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
-    animation-name: anim;
-    animation-duration: 1.5s;
-}
-
-.me:hover .myself {
-   animation-name: wiggle;
-}
-
-@keyframes wiggle {
-  20% {
-    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
-    transform: rotate(7deg);
-  }
-
-  40% {
-    box-shadow:  inset -11px 0 5px 0 rgba(0,0,0,.4);
-    transform: rotate(-14deg);
-  }
-
-  60% {
-    box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
-    transform: rotate(4deg);
-  }
-
-  80% {
-    box-shadow:  inset -8px 0 5px 0 rgba(0,0,0,.4);
-    transform: rotate(-2deg);
-  }
-}
-
-@keyframes anim {
-  0% {
-    height: 200px;
-    width: 200px;
-    margin-top: -2000px;
-  }
-  100% {
-    margin-top: 0%;
-  }
 }
 
 /* show objects being animated */
