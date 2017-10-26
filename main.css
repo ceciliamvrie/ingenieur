@@ -846,3 +846,20 @@ a {
     font-size: 30px;
   }
 }
+
+@media (min-width: 360px) {
+  .container {
+    top: 110%;
+  }
+  .myself {
+    top: 83%;
+    height: 75px;
+    width: 75px;
+  }
+  h1.amanda > a {
+    top: -38em;
+  }
+  h1.urban > a {
+    top: -35em;
+  }
+}
