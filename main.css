@@ -170,37 +170,43 @@ body {
   position: fixed;
 }
 
+h1.urban > a {
+  background-image: url('https://media.giphy.com/media/3ohjUUKp9MmP52Ax9K/giphy.gif');
+}
+
 h1.urban > a, h1.amanda > a {
-  background: black;
-  opacity: 0.2;
-  padding: 28% 25%;
+  opacity: 0.8;
+  background-position: center;
+  color: aqua;
+  padding: 30% 25%;
   font-size: 14px;
   top: -27em;
   position: relative;
-  border-radius: 50%;
-  color: white;
+  border-radius: 48%;
   border: solid 1px white;
 }
 
 .amandas {
-  opacity: 0;
+  opacity: 1;
   background-color: transparent;
 }
 
 
 h1.amanda > a {
+  background-image: url('https://media.giphy.com/media/l1JohQD0rwBlJVkFq/giphy.gif');
+  opacity: 1;
   top: -34em;
   right: 15em;
 }
 
 h1.urban > a:hover, h1.amanda > a:hover {
   transition-duration: 1s, 1.3s;
-  color: white;
+  color: hotpink;
+  font-weight: bold;
   background-color: blue;
 }
 
 h1.amanda > a:hover {
-  opacity: 0.4;
   background-color: blue;
 }
 
