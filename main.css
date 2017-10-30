@@ -186,7 +186,7 @@ h1.urban > a {
   opacity: 0.8;
   background-position: center;
   color: aqua;
-  padding: 30% 25%;
+  padding: 35% 35%;
   font-size: 14px;
   top: -22em;
   left: -5em;
@@ -194,9 +194,6 @@ h1.urban > a {
   border: solid 1px white;
   border-radius: 5%;
   background-image: url('https://media.giphy.com/media/3ohjUUKp9MmP52Ax9K/giphy.gif');
-  padding: 38% 42%;
-  max-width: 395px;
-  max-height: 170px;
 }
 
 .amandas {
