@@ -35,7 +35,7 @@ body {
 }
 
 .overlay-back {
-    background-image: url('./static/plant.jpg');
+    background-image: url('https://ucarecdn.com/477d07d2-dc5f-49a7-93f5-41c74430317d/plantcopy.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -66,7 +66,7 @@ body {
 }
 
 .trans-circle {
-  background-image: url('./static/girlworking.jpg');
+  background-image: url('https://ucarecdn.com/64c9aa11-6223-49d7-9224-6c9f4a6008c2/girlworkingcopy.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -168,6 +168,12 @@ body {
 
 .layer {
   position: fixed;
+}
+
+.moveableA, .moveableU {
+  position: absolute;
+  font-size: 14px;
+  color: black;
 }
 
 
@@ -398,7 +404,7 @@ p::after {
 
 .parallax-two {
    padding-top: 11%;
-   background-image: url('./static/plant.jpg');
+   background-image: url('https://ucarecdn.com/477d07d2-dc5f-49a7-93f5-41c74430317d/plantcopy.jpg');
    min-height: 703px;
    background-attachment: fixed;
    background-position: center;

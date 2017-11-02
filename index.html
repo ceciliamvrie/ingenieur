@@ -57,9 +57,11 @@
        </div>
         <div class="top-container">
           <div class="urban-ball">
-             <h1 class="urban layer" data-depth="0.8"><a style="max-width: 395px; max-height: 170px;" href="https://urbantrails.io/">https://urbantrails.io</a></h1>
+            <div class="moveableU">Urban Trails</div>
+             <h1 class="urban layer" data-depth="0.8"><a style="max-width: 395px;max-height: 170px;" href="https://urbantrails.io/">https://urbantrails.io</a></h1>
           </div>
           <div class="amanda-ball">
+            <div class="moveableA">Amanda Pascali</div>
              <h1 class="amanda layer" data-depth="0.8"><a class="amandas" href='http://amandapascali.com'>http://amandapascali.com</a></h1>
           </div>
         </div>
@@ -146,7 +148,7 @@ $(document).ready(function() {
       $('.amandas').css({'opacity': '0.8'})
       for (var layer of layers) {
         var depth = layer.getAttribute('data-depth')
-        var movement = -(topDistance * depth)
+        var movement = -(topDistance * 0.8)
         var translate3d = 'translate3d(0, ' + movement + 'px, 0)'
         layer.style['-webkit-transform'] = translate3d
         layer.style['-moz-transform'] = translate3d
@@ -185,6 +187,12 @@ $(document).ready(function() {
     body.css({'background-color': `rgb(${num}, ${num}, ${num})`});
   });
 
+  $('.urban').mousemove(function (e) {
+    console.log(e.pageY)
+       var y = e.pageY;
+       var x = e.pageX;
+       $('.moveableU').css('top', y-20).css('left', x-20);
+   });
 });
 </script>
 </body>
