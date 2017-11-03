@@ -57,10 +57,14 @@
        </div>
         <div class="top-container">
           <div class="urban-ball">
-             <h1 class="urban layer" data-depth="0.8"><a style="max-width: 395px;max-height: 170px;" href="https://urbantrails.io/">UT</a></h1>
+            <div>
+             <h1 class="urban layer" data-depth="0.8"><a style="max-width: 395px;max-height: 170px;" href="https://urbantrails.io/">UT</a><span class="urban-hidden">urbantrails.io</span></h1>
+           </div>
           </div>
           <div class="amanda-ball">
-             <h1 class="amanda layer" data-depth="0.8"><a class="amandas" href='http://amandapascali.com'>A</a></h1>
+            <div>
+             <h1 class="amanda layer" data-depth="0.8"><a class="amandas" href='http://amandapascali.com'>A</a><span class="amanda-hidden">amandapascali.com</span></h1>
+           </div>
           </div>
         </div>
      </div>
@@ -69,9 +73,9 @@
          <h3 class="other-projects-message">What other projects have I worked on?</h3>
          <div class="flex-container">
            <div class="sputnik-atx"></div>
-           <div class="sputnik-name"><a href="#">Sputnik ATX</a></div>
+           <div class="sputnik-name"><a href="https://www.sputnikatx.com/">Sputnik ATX</a></div>
            <div class="about-sputnik">
-
+             Sputnik is a Texas-based accelerator that funds maker-founders and starting businesses. I refurbished their original website - making it responsive, and more in-line with the company's personality. 
            </div>
          </div>
        </div>
@@ -101,6 +105,24 @@
 
     <script>
 $(document).ready(function() {
+  $('.amanda').hover((e) => {
+    var hidden = $('.amanda-hidden').css("color", "limegreen")
+    hidden.css('transition-duration', '0.35s')
+  })
+
+  $('.amanda').mouseleave((e) => {
+    var hidden = $('.amanda-hidden').css("color", "transparent")
+    hidden.css('transition-duration', '0.35s')
+  })
+
+  $('.urban').hover((e) => {
+    var hidden = $('.urban-hidden').css("color", "limegreen")
+  })
+
+  $('.urban').mouseleave((e) => {
+    var hidden = $('.urban-hidden').css("color", "transparent")
+  })
+
   // nav
   // $(window).scrollTo(0, $( window ).height() )
   $('.navAbout').click(() => {

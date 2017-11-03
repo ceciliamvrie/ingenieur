@@ -216,9 +216,25 @@ h1.amanda > a {
   right: 15em;
 }
 
+.urban-hidden {
+  transition-duration: 1s;
+  color: transparent;
+  position: absolute;
+  top: -18em;
+  font-size: 18px;
+  left: 7em;
+}
+.amanda-hidden {
+  transition-duration: 0.5s;
+  color: transparent;
+  position: absolute;
+  top: -18em;
+  font-size: 18px;
+  right: 18em;
+}
+
 h1.urban > a:hover, h1.amanda > a:hover {
-  transition-duration: 1s, 1.3s;
-  color: aqua;
+  transition-duration: 1s;
   padding: 100px;
   opacity: 0.8;
   text-decoration: none;
@@ -226,9 +242,27 @@ h1.urban > a:hover, h1.amanda > a:hover {
   background-color: blue;
 }
 
+.sputnik-name > a{
+  transition-duration: 1s;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.about-sputnik {
+  padding-top: 1.5%;
+  font-size: 18px;
+  max-width: 400px;
+  line-height: 1.5em;
+  margin: auto;
+}
+
+.sputnik-name > a:hover {
+  color: lightgreen;
+}
+
 h1.amanda > a:hover {
   text-decoration: none;
-  background-color: blue;
 }
 
 h1.urban, h1.amanda {
@@ -733,7 +767,7 @@ a {
 /* here are my other projects */
 section.other-projects {
   display: block;
-  padding: 10% 10% 30% 10%;
+  padding: 10%;
   background-color: hsl(168, 74%, 63%);
 }
 
@@ -755,7 +789,9 @@ section.other-projects {
 }
 
 .sputnik-name {
-  margin-top: 1.5%;
+  font-weight: 600;
+  margin-top: 2.5%;
+  letter-spacing: 0.07em;
 }
 
 .flex-container {
