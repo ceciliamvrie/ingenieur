@@ -180,25 +180,26 @@ body {
 h1.amanda > a {
   opacity: 0.8;
   background-position: center;
-  color: aqua;
-  padding: 30% 25%;
-  font-size: 14px;
+  color: transparent;
+  padding: 80px 83px;
+  font-size: 20px;
   top: -24em;
+  left: -70%;
+  font-weight: bold;
   position: relative;
   border: solid 1px white;
-  border-radius: 5%;
+  border-radius: 50%;
 }
 h1.urban > a {
   opacity: 0.8;
   background-position: center;
-  color: aqua;
-  padding: 28% 30%;
-  font-size: 14px;
-  top: -22em;
-  left: -5em;
+  color: transparent;
+  padding: 50px 50px;
+  font-size: 20px;
+  top: -17em;
   position: relative;
   border: solid 1px white;
-  border-radius: 5%;
+  border-radius: 50%;
   background-image: url('https://media.giphy.com/media/3ohjUUKp9MmP52Ax9K/giphy.gif');
 }
 
@@ -217,12 +218,16 @@ h1.amanda > a {
 
 h1.urban > a:hover, h1.amanda > a:hover {
   transition-duration: 1s, 1.3s;
-  color: hotpink;
+  color: aqua;
+  padding: 100px;
+  opacity: 0.8;
+  text-decoration: none;
   font-weight: bold;
   background-color: blue;
 }
 
 h1.amanda > a:hover {
+  text-decoration: none;
   background-color: blue;
 }
 
@@ -723,6 +728,38 @@ a {
   -ms-animation-play-state: running;
   -o-animation-play-state: running;
   animation-play-state: running;
+}
+
+/* here are my other projects */
+section.other-projects {
+  display: block;
+  padding: 10% 10% 30% 10%;
+  background-color: hsl(168, 74%, 63%);
+}
+
+.other-projects-message {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.sputnik-atx {
+  background-color: grey;
+  height: 200px;
+  width: 260px;
+  margin: auto;
+  border-radius: 5%;
+  background-image: url('./static/sputnik.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sputnik-name {
+  margin-top: 1.5%;
+}
+
+.flex-container {
+  margin-top: 7%;
 }
 
 @-webkit-keyframes bounceInRight {
