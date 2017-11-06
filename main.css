@@ -245,20 +245,20 @@ h1.urban > a:hover, h1.amanda > a:hover {
 .sputnik-name > a{
   transition-duration: 1s;
   color: white;
-  font-size: 22px;
+  font-size: 25px;
   text-decoration: none;
 }
 
 .about-sputnik {
   padding-top: 1.5%;
-  font-size: 18px;
-  max-width: 400px;
-  line-height: 1.5em;
-  margin: auto;
+  font-size: 19px;
+  max-width: 390px;
+  line-height: 1.7em;
+  margin-left: 15%;
 }
 
 .sputnik-name > a:hover {
-  color: lightgreen;
+  color: #008d98;
 }
 
 h1.amanda > a:hover {
@@ -272,7 +272,7 @@ h1.urban, h1.amanda {
 
 h1.urban:hover, h1.amanda:hover {
   color: hotpink;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
 }
 
 
@@ -773,13 +773,13 @@ section.other-projects {
 
 .other-projects-message {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .sputnik-atx {
   background-color: grey;
-  height: 200px;
-  width: 260px;
+  height: 250px;
+  width: 310px;
   margin: auto;
   border-radius: 5%;
   background-image: url('./static/sputnik.png');
@@ -788,14 +788,23 @@ section.other-projects {
   background-repeat: no-repeat;
 }
 
+.sputnik-atx:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition-duration: 1s;
+}
+
 .sputnik-name {
+  margin-left: 15%;
   font-weight: 600;
-  margin-top: 2.5%;
+  margin-top: 10.5%;
   letter-spacing: 0.07em;
 }
 
 .flex-container {
   margin-top: 7%;
+  display: flex;
+  justify-content: center;
 }
 
 @-webkit-keyframes bounceInRight {
