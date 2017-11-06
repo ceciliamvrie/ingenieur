@@ -425,6 +425,7 @@ p::after {
 
 .parallax {
     padding-top: 14%;
+    height: 100%;
     min-height: 703px;
     vertical-align: middle;
     background-attachment: fixed;
@@ -436,12 +437,14 @@ p::after {
 }
 
 .parallax3 {
+     height: 100%;
      background-color: #fff;
      padding: 19% 5%;
      padding-right: 5%;
 }
 
 .parallax-two {
+   height: 100%;
    padding-top: 11%;
    background-image: url('https://ucarecdn.com/477d07d2-dc5f-49a7-93f5-41c74430317d/plantcopy.jpg');
    min-height: 703px;
@@ -934,6 +937,26 @@ section.other-projects {
 	}
 }
 
+@media screen and (min-width: 400px) and (max-width: 500px){
+  div.container {
+    top: 110%;
+  }
+  .parallax {
+    height: 100%;
+  }
+  .myself {
+    top: 83%;
+    height: 75px;
+    width: 75px;
+  }
+  h1.amanda > a {
+    top: -25em;
+  }
+  h1.urban > a {
+    top: -27em;
+  }
+}
+
 @media (min-width: 2000px){
   .clip-text {
     font-size: 12em;
@@ -947,22 +970,5 @@ section.other-projects {
   nav li {
     padding: 15px 40px;
     font-size: 30px;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 450px) {
-  .container {
-    top: 110%;
-  }
-  .myself {
-    top: 83%;
-    height: 75px;
-    width: 75px;
-  }
-  h1.amanda > a {
-    top: -5em;
-  }
-  h1.urban > a {
-    top: -35em;
   }
 }
