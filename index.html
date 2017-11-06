@@ -141,7 +141,7 @@ $(document).ready(function() {
     })
   })
   // $('.navContact').click($(window).scrollTo(0, $( window ).height() * 4 ))
-  $('.navContact').click(() => {
+  $('.navContact').click((e) => {
     e.preventDefault()
     document.querySelector('div.contacts').scrollIntoView({
       behavior: 'smooth'
