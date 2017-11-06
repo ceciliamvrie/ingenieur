@@ -85,7 +85,7 @@
         <div  class="contacts">
         <h3 class="contact">Contact Me</h3>
         <div class="closing">
-          Want to explore more of my work? Feel free to click on any of these links below. If you want to contact me directly, my email is: <span class="closeingspan"><b style="margin-top: 50px;">ceciliamvrie@gmail.com</b><span>
+          Want to explore more of my work? Feel free to click on any of these links below. If you want to contact me directly, my email is: <span class="closeingspan"><b style="margin-top: 50px;"><a href="mailto:ceciliamvrie@gmail.com?Subject=Dear%20Cecilia">ceciliamvrie@gmail.com</a></b><span>
         </div>
       </div>
     </div>
@@ -125,28 +125,25 @@ $(document).ready(function() {
 
   // nav
   // $(window).scrollTo(0, $( window ).height() )
-  $('.navAbout').click(() => {
-    window.scroll({
-     top: $( window ).height() - 100,
-     left: 0,
-     behavior: 'smooth'
-    });
+  $('.navAbout').click((e) => {
+    e.preventDefault()
+    document.querySelector('div.container').scrollIntoView({
+      behavior: 'smooth'
+    })
   })
   // $('.navProjects').click($(window).scrollTo(0,  $( window ).height() * 2))
-  $('.navProjects').click(() => {
-    window.scroll({
-     top: $( window ).height() * 2 + 130,
-     left: 0,
-     behavior: 'smooth'
-    });
+  $('.navProjects').click((e) => {
+    e.preventDefault()
+    document.querySelector('div.about-projects').scrollIntoView({
+      behavior: 'smooth'
+    })
   })
   // $('.navContact').click($(window).scrollTo(0, $( window ).height() * 4 ))
   $('.navContact').click(() => {
-    window.scroll({
-     top: $( window ).height() * 3 + 330,
-     left: 0,
-     behavior: 'smooth'
-    });
+    e.preventDefault()
+    document.querySelector('div.contacts').scrollIntoView({
+      behavior: 'smooth'
+    })
   })
   $('.overlay-back').css({'height': '100%'})
   $('.wrapper').css({'height': $(window).height +'px'})
