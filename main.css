@@ -45,7 +45,7 @@ body {
   background: rgba(14, 193, 254, 0.7);
   border: 0.5px dotted rgb(14, 193, 254);
   width: 52%;
-  height: 90%;
+  height: 93%;
   border-radius: 50%;
   margin: auto;
   z-index: -1;
@@ -937,7 +937,9 @@ section.other-projects {
 	}
 }
 
-@media screen and (min-width: 400px) and (max-width: 500px){
+
+
+@media screen and (min-width: 360px) and (max-width: 400px){
   div.container {
     top: 110%;
   }

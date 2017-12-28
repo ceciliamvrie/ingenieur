@@ -2,9 +2,9 @@
   <html>
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Slab" />
+    <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.1.4/uploadcare.full.min.js"></script>
   </head>
   <body>
@@ -28,7 +28,7 @@
         <ul>
           <li><a href="#" class="navAbout">About</a><li>
           <li><a href="https://medium.com/@ceciliamvrie" class="navBlog">Blog</a><li>
-          <li><a href="./static/CeciliaCisnerosResume.pdf" download="CeciliaCisnerosResume.pdf">Resume</a><li>
+          <li><a href="./static/FrontendDeveloperResume.docx" download="FrontendDeveloperResume.docx">Resume</a><li>
           <li><a href="#" class="navProjects">Projects</a><li>
           <li><a href="#" class="navContact">Contact</a><li>
        </ul>
@@ -36,7 +36,7 @@
    </header>
      <div class="parallax">
        <div class="trans-circle"></div>
-       <div class='container'>
+       <div id="container" class="container">
          <div class="trans-sm-circle"></div>
          <div class="trans-sm-circle1"></div>
          <div class="trans-sm-circle2"></div>
@@ -45,9 +45,9 @@
           <div id="picture" class="animatable"></div>
          <h1 class="aboutme intro">Let me introduce myself.</h1> </br>
          <div class="aboutme">
-             <div class="myself"></div>
-           My name's Cecilia and I'm a developer with a soft-spot for Javascript and the frontend. I engoy my time writing blogs, programs, and songs - while occasionally checking out awesome projects in <a href="https://github.com/ceciliamvrie" style="text-decoration: none; font-weight: bold; color: hotpink;">Github</a> and <a href="#" style="text-decoration: none; font-weight: bold; color: hotpink;">Codepen</a>.
-       </div>
+            <div class="myself"></div>
+            My name is Cecilia and I specialize in developing the client side for web and mobile applications. I enjoy my time writing blogs, programs, and checking out awesome projects on <a href="https://github.com/ceciliamvrie" style="text-decoration: none; font-weight: bold; color: hotpink;">Github</a> and <a href="#" style="text-decoration: none; font-weight: bold; color: hotpink;">Codepen</a>.
+         </div>
       </div>
      </div>
      <div class="parallax3">
@@ -70,7 +70,7 @@
      </div>
      <section class="other-projects">
        <div class="other-container">
-         <h3 class="other-projects-message">Check out my client's websites</h3>
+         <h3 class="other-projects-message">Check out my recent websites</h3>
          <div class="flex-container">
            <a href="https://www.sputnikatx.com/"><div class="sputnik-atx"></div></a>
            <div>
@@ -87,7 +87,7 @@
         <div  class="contacts">
         <h3 class="contact">Contact Me</h3>
         <div class="closing">
-          Want to explore more of my work? Feel free to click on any of these links below. If you want to contact me directly, my email is: <span class="closeingspan"><b style="margin-top: 50px;"><a href="mailto:ceciliamvrie@gmail.com?Subject=Dear%20Cecilia">ceciliamvrie@gmail.com</a></b><span>
+          Want to explore more of my work? Feel free to click on any of these links below. If you wish to contact me directly, my email is: <span class="closeingspan"><b style="margin-top: 50px;"><a href="mailto:ceciliamvrie@gmail.com?Subject=Dear%20Cecilia">ceciliamvrie@gmail.com</a></b><span>
         </div>
       </div>
     </div>
@@ -172,10 +172,12 @@ $(document).ready(function() {
 
     if (topDistance < 1000) {
       $('.amandas').css({'opacity': '0'})
+      $('.urban').css({'opacity': '0'})
     }
 
     if (topDistance > 1000) {
       $('.amandas').css({'opacity': '0.8'})
+      $('.urban').css({'opacity': '0.8'})
       for (var layer of layers) {
         var depth = layer.getAttribute('data-depth')
         var movement = -(topDistance * 0.8)
@@ -223,6 +225,14 @@ $(document).ready(function() {
        var x = e.pageX;
        $('.moveableU').css('top', y-20).css('left', x-20);
    });
+
+   if (window.outerWidth < 500) {
+     console.log('shrink container')
+     var container = $('.container')
+     container.css({top: '110%', left: '28%', padding: '5% 7%'})
+     var overlay = $('.overlay')
+     overlay.css({padding: '50% 0 0 0', width: '100%'})
+   }
 });
 </script>
 </body>
