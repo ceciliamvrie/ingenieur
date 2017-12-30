@@ -75,7 +75,7 @@
            <div>
            <div class="sputnik-name"><a href="https://www.sputnikatx.com/">Sputnik ATX</a></div>
            <div class="about-sputnik">
-             Sputnik is a Texas-based accelerator that funds maker-founders and starting businesses. I refurbished their original website - making it responsive, and more in-line with the Sputnik's personality.
+             Sputnik is a Texas-based accelerator that funds maker-founders and starting businesses. I refurbished their original website - making it mobile responsive, and more in-line with the Sputnik's personality.
            </div>
          </div>
          </div>
@@ -90,9 +90,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="parallax-3">
-      <div class="myself"></div>
-    </div> -->
     <div class="footer">
       <div>
         <a href="https://github.com/ceciliamvrie"><i class="fa fa-1x fa-github-alt" aria-hidden="true"></i></a> •
@@ -106,68 +103,60 @@
 
     <script>
 $(document).ready(function() {
+  var body = $('header')
+  var parallax1 = $('.parallax')
+  var parallax3 = $('.parallax3')
+  var myself = $('.myself')[0]
+  var picture1 = $('.amanda').addClass('animatable')
+  var picture2 = $('.urban').addClass('animatable')
+
+  body.css({'height': `${$(window).height()}px`, 'background-color': `rgb(0, 0, 0)`,})
+
   $('.amanda').hover((e) => {
-    var hidden = $('.amanda-hidden').css("color", "limegreen")
-    hidden.css('transition-duration', '0.35s')
+    $('.amanda-hidden').css({'color': "limegreen", 'transition-duration': "0.35s"})
   })
 
   $('.amanda').mouseleave((e) => {
-    var hidden = $('.amanda-hidden').css("color", "transparent")
-    hidden.css('transition-duration', '0.35s')
+    $('.amanda-hidden').css({"color": "transparent", "transition-duration": "0.35s"})
   })
 
   $('.urban').hover((e) => {
-    var hidden = $('.urban-hidden').css("color", "limegreen")
+    $('.urban-hidden').css("color", "limegreen")
   })
 
   $('.urban').mouseleave((e) => {
-    var hidden = $('.urban-hidden').css("color", "transparent")
+    $('.urban-hidden').css("color", "transparent")
   })
 
-  // nav
-  // $(window).scrollTo(0, $( window ).height() )
+
   $('.navAbout').click((e) => {
     e.preventDefault()
-    document.querySelector('div.container').scrollIntoView({
-      behavior: 'smooth'
-    })
+    document.querySelector('div.container').scrollIntoView({ behavior: 'smooth' })
   })
-  // $('.navProjects').click($(window).scrollTo(0,  $( window ).height() * 2))
+
   $('.navProjects').click((e) => {
     e.preventDefault()
-    document.querySelector('div.about-projects').scrollIntoView({
-      behavior: 'smooth'
-    })
+    document.querySelector('div.about-projects').scrollIntoView({ behavior: 'smooth' })
   })
-  // $('.navContact').click($(window).scrollTo(0, $( window ).height() * 4 ))
+
   $('.navContact').click((e) => {
     e.preventDefault()
-    document.querySelector('div.contacts').scrollIntoView({
-      behavior: 'smooth'
-    })
+    document.querySelector('div.contacts').scrollIntoView({ behavior: 'smooth' })
   })
   $('.overlay-back').css({'height': '100%'})
   $('.wrapper').css({'height': $(window).height +'px'})
   $('.parallax').css({'height': $(window).height +'px'})
   $('.parallax3').css({'height': $(window).height +'px'})
-  var parallax1 = $('.parallax')
-  var parallax3 = $('.parallax3')
-  var myself = $('.myself')[0]
-  var body = $('header');
-  body.css({'height': `${$( window ).height() - 200}px`})
-  body.css({'background-color': `rgb(0, 0, 0)`});
-  body.css({'height': `${$(window).height()}px`})
-  var hi = $('#picture').addClass('animatable')
-  var picture1 = $('.amanda').addClass('animatable')
-  var picture2 = $('.urban').addClass('animatable')
 
 
   $(window).on('scroll', function (e) {
-    parallax1.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
-    parallax3.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
-
+    var navHeight = $( window ).height()
+    var num = $(this).scrollTop()
     const topDistance = window.pageYOffset
     const layers = document.querySelectorAll('.layer')
+
+    parallax1.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
+    parallax3.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
 
     if (topDistance < 1000) {
       $('.amandas').css({'opacity': '0'})
@@ -178,59 +167,46 @@ $(document).ready(function() {
       $('.amandas').css({'opacity': '0.8'})
       $('.urban').css({'opacity': '0.8'})
       for (var layer of layers) {
-        var depth = layer.getAttribute('data-depth')
         var movement = -(topDistance * 0.8)
         var translate3d = 'translate3d(0, ' + movement + 'px, 0)'
-        layer.style['-webkit-transform'] = translate3d
-        layer.style['-moz-transform'] = translate3d
-        layer.style['-ms-transform'] = translate3d
-        layer.style['-o-transform'] = translate3d
+        layer.getAttribute('data-depth')
         layer.style.transform = translate3d
       }
     }
 
-
     if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
-      picture1.removeClass('animatable').addClass('animated')
-      picture1.css({'animation': 'bounceInRight 0.2s linear'})
+      picture1.removeClass('animatable').addClass('animated').css({'animation': 'bounceInRight 0.2s linear'})
     }
 
       if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
-      picture2.removeClass('animatable').addClass('animated')
-      picture2.css({'animation': 'bounceInRight 1.5s linear'})
+      picture2.removeClass('animatable').addClass('animated').css({'animation': 'bounceInRight 1.5s linear'})
     }
 
-    var navHeight = $( window ).height();
     if ($(window).scrollTop() > navHeight - 59) {
-      $('nav').addClass('fixed');
+      $('nav').addClass('fixed')
     } else {
-      $('nav').removeClass('fixed');
+      $('nav').removeClass('fixed')
     }
 
     if ($(window).scrollTop() > navHeight - 10) {
-      $('nav').addClass('shadow');
+      $('nav').addClass('shadow')
     } else {
-      $('nav').removeClass('shadow');
+      $('nav').removeClass('shadow')
     }
 
-    var num = $(this).scrollTop()
     $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
-    body.css({'background-color': `rgb(${num}, ${num}, ${num})`});
-  });
+    body.css({'background-color': `rgb(${num}, ${num}, ${num})`})
+  })
 
   $('.urban').mousemove(function (e) {
-    console.log(e.pageY)
-       var y = e.pageY;
-       var x = e.pageX;
-       $('.moveableU').css('top', y-20).css('left', x-20);
+       var y = e.pageY
+       var x = e.pageX
+       $('.moveableU').css('top', y-20).css('left', x-20)
    });
 
    if (window.outerWidth < 500) {
-     console.log('shrink container')
-     var container = $('.container')
-     container.css({top: '110%', left: '28%', padding: '5% 7%'})
-     var overlay = $('.overlay')
-     overlay.css({padding: '50% 0 0 0', width: '100%'})
+     $('.container').css({top: '110%', left: '28%', padding: '5% 7%'})
+    $('.overlay').css({padding: '50% 0 0 0', width: '100%'})
    }
 });
 </script>
