@@ -3,8 +3,6 @@
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="preload" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Slab" onload="this.rel='stylesheet'" />
-    <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <header class="wrapper">
@@ -100,114 +98,99 @@
       <span class="copyright">Made With ❤️ by Cecilia Marie 👩🏻‍💻</span>
     </div>
     </div>
-
+    <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
 $(document).ready(function() {
-  var body = $('header')
-  var parallax1 = $('.parallax')
-  var parallax3 = $('.parallax3')
-  var myself = $('.myself')[0]
-  var picture1 = $('.amanda').addClass('animatable')
-  var picture2 = $('.urban').addClass('animatable')
+  const body = $('header')
+  const parallax1 = $('.parallax')
+  const parallax3 = $('.parallax3')
+  const myself = $('.myself')[0]
+  const picture1 = $('.amanda').addClass('animatable')
+  const picture2 = $('.urban').addClass('animatable')
 
   body.css({'height': `${$(window).height()}px`, 'background-color': `rgb(0, 0, 0)`,})
 
-  $('.amanda').hover((e) => {
-    $('.amanda-hidden').css({'color': "limegreen", 'transition-duration': "0.35s"})
-  })
+  if (window.outerWidth < 500) {
+     $('.container').css({top: '110%', left: '28%', padding: '5% 7%'})
+     $('.overlay').css({padding: '50% 0 0 0', width: '100%'})
+   }
 
-  $('.amanda').mouseleave((e) => {
-    $('.amanda-hidden').css({"color": "transparent", "transition-duration": "0.35s"})
-  })
-
-  $('.urban').hover((e) => {
-    $('.urban-hidden').css("color", "limegreen")
-  })
-
-  $('.urban').mouseleave((e) => {
-    $('.urban-hidden').css("color", "transparent")
-  })
-
-
-  $('.navAbout').click((e) => {
-    e.preventDefault()
-    document.querySelector('div.container').scrollIntoView({ behavior: 'smooth' })
-  })
-
-  $('.navProjects').click((e) => {
-    e.preventDefault()
-    document.querySelector('div.about-projects').scrollIntoView({ behavior: 'smooth' })
-  })
-
-  $('.navContact').click((e) => {
-    e.preventDefault()
-    document.querySelector('div.contacts').scrollIntoView({ behavior: 'smooth' })
-  })
   $('.overlay-back').css({'height': '100%'})
   $('.wrapper').css({'height': $(window).height +'px'})
   $('.parallax').css({'height': $(window).height +'px'})
   $('.parallax3').css({'height': $(window).height +'px'})
 
 
+  $('.amanda').hover(e => $('.amanda-hidden').css({'color': "limegreen", 'transition-duration': "0.35s"}))
+  $('.amanda').mouseleave(e => $('.amanda-hidden').css({"color": "transparent", "transition-duration": "0.35s"}))
+
+  $('.urban').hover(e => $('.urban-hidden').css("color", "limegreen"))
+  $('.urban').mouseleave(e => $('.urban-hidden').css("color", "transparent"))
+
+  $('.navAbout').click(e => {
+    e.preventDefault()
+    $('div.container').scrollIntoView({ behavior: 'smooth' })
+  })
+
+  $('.navProjects').click(e => {
+    e.preventDefault()
+    $('div.about-projects').scrollIntoView({ behavior: 'smooth' })
+  })
+
+  $('.navContact').click(e => {
+    e.preventDefault()
+    $('div.contacts').scrollIntoView({ behavior: 'smooth' })
+  })
+
+
   $(window).on('scroll', function (e) {
-    var navHeight = $( window ).height()
-    var num = $(this).scrollTop()
+    const navHeight = $( window ).height()
     const topDistance = window.pageYOffset
+    const num = topDistance
     const layers = document.querySelectorAll('.layer')
 
-    parallax1.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
-    parallax3.css({'background-color': `hsl(${$(window).scrollTop() / 10}, 77%, 78%)`})
+    body.css({'background-color': `rgb(${num}, ${num}, ${num})`})
+    $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
+    parallax1.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
+    parallax3.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
 
-    if (topDistance < 1000) {
-      $('.amandas').css({'opacity': '0'})
-      $('.urban').css({'opacity': '0'})
-    }
+    $('nav').addClass('fixed')
+    $('nav').addClass('shadow')
+    $('.amandas').css({display: 'none'})
+    $('.urban').css({display: 'none'})
 
-    if (topDistance > 1000) {
-      $('.amandas').css({'opacity': '0.8'})
-      $('.urban').css({'opacity': '0.8'})
-      for (var layer of layers) {
-        var movement = -(topDistance * 0.8)
-        var translate3d = 'translate3d(0, ' + movement + 'px, 0)'
-        layer.getAttribute('data-depth')
-        layer.style.transform = translate3d
-      }
-    }
-
-    if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
-      picture1.removeClass('animatable').addClass('animated').css({'animation': 'bounceInRight 0.2s linear'})
-    }
-
-      if ($(window).scrollTop() > 1200 && $(window).scrollTop() < 1291) {
-      picture2.removeClass('animatable').addClass('animated').css({'animation': 'bounceInRight 1.5s linear'})
-    }
-
-    if ($(window).scrollTop() > navHeight - 59) {
-      $('nav').addClass('fixed')
-    } else {
+    if (topDistance < navHeight - 59) {
       $('nav').removeClass('fixed')
     }
 
-    if ($(window).scrollTop() > navHeight - 10) {
-      $('nav').addClass('shadow')
-    } else {
+    if (topDistance < navHeight - 10) {
       $('nav').removeClass('shadow')
     }
 
-    $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
-    body.css({'background-color': `rgb(${num}, ${num}, ${num})`})
+    if (topDistance > 1000) {
+      $('.amandas').css({opacity: '0.8', display: 'block'})
+      $('.urban').css({opacity: '0.8', display: 'block'})
+      for (var layer of layers) {
+        var movement = -(topDistance * 0.8)
+        layer.getAttribute('data-depth')
+        layer.style.transform = `translate3d(0, ${movement}px, 0)`
+      }
+    }
+
+    if (topDistance > 1200) {
+      picture1.removeClass('animatable')
+      .addClass('animated')
+      .css({'animation': 'bounceInRight 0.2s linear'})
+    }
+
+    if (topDistance > 1240) {
+      picture2.removeClass('animatable')
+      .addClass('animated')
+      .css({'animation': 'bounceInRight 1.5s linear'})
+    }
+
   })
-
-  $('.urban').mousemove(function (e) {
-       var y = e.pageY
-       var x = e.pageX
-       $('.moveableU').css('top', y-20).css('left', x-20)
-   });
-
-   if (window.outerWidth < 500) {
-     $('.container').css({top: '110%', left: '28%', padding: '5% 7%'})
-    $('.overlay').css({padding: '50% 0 0 0', width: '100%'})
-   }
 });
 </script>
 </body>
