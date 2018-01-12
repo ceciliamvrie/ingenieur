@@ -101,97 +101,98 @@
     <script src="https://use.fontawesome.com/7c65a945cc.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-$(document).ready(function() {
-  const body = $('header')
-  const parallax1 = $('.parallax')
-  const parallax3 = $('.parallax3')
-  const myself = $('.myself')[0]
-  const picture1 = $('.amanda').addClass('animatable')
-  const picture2 = $('.urban').addClass('animatable')
+    $(document).ready(function() {
+      const body = $('header')
+      const parallax1 = $('.parallax')
+      const parallax3 = $('.parallax3')
+      const myself = $('.myself')[0]
+      const picture1 = $('.amanda').addClass('animatable')
+      const picture2 = $('.urban').addClass('animatable')
 
-  body.css({'height': `${$(window).height()}px`, 'background-color': `rgb(0, 0, 0)`,})
+      body.css({'height': `${$(window).height()}px`, 'background-color': `rgb(0, 0, 0)`,})
 
-  if (window.outerWidth < 500) {
-     $('.container').css({top: '110%', left: '28%', padding: '5% 7%'})
-     $('.overlay').css({padding: '50% 0 0 0', width: '100%'})
-   }
+      if (window.outerWidth < 500) {
+         $('.container').css({top: '110%', left: '28%', padding: '5% 7%'})
+         $('.overlay').css({padding: '50% 0 0 0', width: '100%'})
+       }
 
-  $('.overlay-back').css({'height': '100%'})
-  $('.wrapper').css({'height': $(window).height +'px'})
-  $('.parallax').css({'height': $(window).height +'px'})
-  $('.parallax3').css({'height': $(window).height +'px'})
-
-
-  $('.amanda').hover(e => $('.amanda-hidden').css({'color': "limegreen", 'transition-duration': "0.35s"}))
-  $('.amanda').mouseleave(e => $('.amanda-hidden').css({"color": "transparent", "transition-duration": "0.35s"}))
-
-  $('.urban').hover(e => $('.urban-hidden').css("color", "limegreen"))
-  $('.urban').mouseleave(e => $('.urban-hidden').css("color", "transparent"))
-
-  $('.navAbout').click(e => {
-    e.preventDefault()
-    $('div.container').scrollIntoView({ behavior: 'smooth' })
-  })
-
-  $('.navProjects').click(e => {
-    e.preventDefault()
-    $('div.about-projects').scrollIntoView({ behavior: 'smooth' })
-  })
-
-  $('.navContact').click(e => {
-    e.preventDefault()
-    $('div.contacts').scrollIntoView({ behavior: 'smooth' })
-  })
+      $('.overlay-back').css({'height': '100%'})
+      $('.wrapper').css({'height': $(window).height +'px'})
+      $('.parallax').css({'height': $(window).height +'px'})
+      $('.parallax3').css({'height': $(window).height +'px'})
 
 
-  $(window).on('scroll', function (e) {
-    const navHeight = $( window ).height()
-    const topDistance = window.pageYOffset
-    const num = topDistance
-    const layers = document.querySelectorAll('.layer')
+      $('.amanda').hover(e => $('.amanda-hidden').css({'color': "limegreen", 'transition-duration': "0.35s"}))
+      $('.amanda').mouseleave(e => $('.amanda-hidden').css({"color": "transparent", "transition-duration": "0.35s"}))
 
-    body.css({'background-color': `rgb(${num}, ${num}, ${num})`})
-    $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
-    parallax1.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
-    parallax3.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
+      $('.urban').hover(e => $('.urban-hidden').css("color", "limegreen"))
+      $('.urban').mouseleave(e => $('.urban-hidden').css("color", "transparent"))
 
-    $('nav').addClass('fixed')
-    $('nav').addClass('shadow')
-    $('.amandas').css({display: 'none'})
-    $('.urban').css({display: 'none'})
+      $('.navAbout').click(e => {
+        e.preventDefault()
+        console.log(e)
+        $('div.container')[0].scrollIntoView({ behavior: 'smooth' })
+      })
 
-    if (topDistance < navHeight - 59) {
-      $('nav').removeClass('fixed')
-    }
+      $('.navProjects').click(e => {
+        e.preventDefault()
+        $('div.about-projects')[0].scrollIntoView({ behavior: 'smooth' })
+      })
 
-    if (topDistance < navHeight - 10) {
-      $('nav').removeClass('shadow')
-    }
+      $('.navContact').click(e => {
+        e.preventDefault()
+        $('div.contacts')[0].scrollIntoView({ behavior: 'smooth' })
+      })
 
-    if (topDistance > 1000) {
-      $('.amandas').css({opacity: '0.8', display: 'block'})
-      $('.urban').css({opacity: '0.8', display: 'block'})
-      for (var layer of layers) {
-        var movement = -(topDistance * 0.8)
-        layer.getAttribute('data-depth')
-        layer.style.transform = `translate3d(0, ${movement}px, 0)`
-      }
-    }
+      $(window).on('scroll', function (e) {
+        const navHeight = $( window ).height()
+        const topDistance = window.pageYOffset
+        const num = topDistance
+        const layers = document.querySelectorAll('.layer')
 
-    if (topDistance > 1200) {
-      picture1.removeClass('animatable')
-      .addClass('animated')
-      .css({'animation': 'bounceInRight 0.2s linear'})
-    }
+        body.css({'background-color': `rgb(${num}, ${num}, ${num})`})
+        $('nav').css({'background-color': `rgb(${num}, ${num}, ${num})`})
+        parallax1.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
+        parallax3.css({'background-color': `hsl(${topDistance / 10}, 77%, 78%)`})
 
-    if (topDistance > 1240) {
-      picture2.removeClass('animatable')
-      .addClass('animated')
-      .css({'animation': 'bounceInRight 1.5s linear'})
-    }
+        $('nav').addClass('fixed')
+        $('nav').addClass('shadow')
+        $('.amandas').css({display: 'none'})
+        $('.urban').css({display: 'none'})
 
-  })
-});
-</script>
+        if (topDistance < navHeight - 59) {
+          $('nav').removeClass('fixed')
+        }
+
+        if (topDistance < navHeight - 10) {
+          $('nav').removeClass('shadow')
+        }
+
+        if (topDistance > 1000) {
+          $('.amandas').css({opacity: '0.8', display: 'block'})
+          $('.urban').css({opacity: '0.8', display: 'block'})
+          for (var layer of layers) {
+            var movement = -(topDistance * 0.8)
+            layer.getAttribute('data-depth')
+            layer.style.transform = `translate3d(0, ${movement}px, 0)`
+          }
+        }
+
+        if (topDistance > 1200) {
+          picture1.removeClass('animatable')
+          .addClass('animated')
+          .css({'animation': 'bounceInRight 0.2s linear'})
+        }
+
+        if (topDistance > 1240) {
+          picture2.removeClass('animatable')
+          .addClass('animated')
+          .css({'animation': 'bounceInRight 1.5s linear'})
+        }
+
+      })
+    });
+
+    </script>
 </body>
 </html>
